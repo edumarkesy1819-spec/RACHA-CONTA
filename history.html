@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Histórico - Bill Splitting App</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#8EBCCF", // Soft Muted Blue
+              "primary-light": "#B7D8E8", // Light Muted Blue
+              "accent": "#EAC8CA", // Soft Dusty Pink
+              "background-light": "#FDFCF8", // Warm Cream
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {
+              "DEFAULT": "0.5rem", 
+              "lg": "1rem", 
+              "xl": "1.5rem", 
+              "2xl": "16px", // Specific 16px requirement for cards
+              "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+        /* Add some padding for the fixed bottom nav */
+        body { padding-bottom: 80px; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body id="screen-history" class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen antialiased selection:bg-primary/30">
+<!-- Header -->
+<header class="sticky top-0 z-20 flex items-center justify-between px-4 pt-12 pb-4 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-transparent transition-colors">
+<button class="flex items-center justify-center w-10 h-10 -ml-2 rounded-full text-slate-700 dark:text-slate-300 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[28px]">arrow_back</span>
+</button>
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Histórico</h1>
+<div class="w-10"></div> <!-- Placeholder for layout balance -->
+</header>
+<main class="flex flex-col max-w-md mx-auto w-full">
+<!-- Summary Card -->
+<section class="px-4 mt-2 mb-8">
+<div class="bg-white dark:bg-slate-800 rounded-xl p-8 flex flex-col items-center justify-center text-center shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-slate-100 dark:border-slate-700/50">
+<h2 class="text-slate-500 dark:text-slate-400 text-[11px] font-bold uppercase tracking-widest mb-3">Total Gasto no Mês</h2>
+<p id="history-total-spent" class="text-[40px] leading-none font-extrabold text-slate-900 dark:text-white tracking-tight">R$ 0,00</p>
+</div>
+</section>
+<!-- History List -->
+<section id="history-list" class="flex flex-col gap-3 pb-8">
+    <!-- Populated by JS -->
+</section>
+
+<!-- Floating Action Button (+ Novo Racha) -->
+<a href="calculator.html" class="fixed bottom-28 right-6 z-40 bg-primary text-white size-14 rounded-full shadow-lg shadow-primary/30 flex items-center justify-center hover:scale-105 active:scale-95 transition-all">
+    <span class="material-symbols-outlined text-[32px]">add</span>
+</a>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 pb-safe pt-2 px-6 z-50">
+<div class="max-w-md mx-auto flex justify-between items-center pb-6">
+<!-- Active Item -->
+<a class="flex flex-col items-center justify-center flex-1 gap-1 text-primary dark:text-primary-light" href="history.html">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="text-[11px] font-semibold tracking-wide">Histórico</span>
+</a>
+<!-- Inactive Item -->
+<a class="flex flex-col items-center justify-center flex-1 gap-1 text-slate-400 hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300 transition-colors" href="calculator.html">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 0;">calculate</span>
+<span class="text-[11px] font-medium tracking-wide">Calcular</span>
+</a>
+<!-- Inactive Item -->
+<a class="flex flex-col items-center justify-center flex-1 gap-1 text-slate-400 hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300 transition-colors" href="settings.html">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 0;">settings</span>
+<span class="text-[11px] font-medium tracking-wide">Ajustes</span>
+</a>
+</div>
+</nav>
+
+<script src="js/app.js"></script>
+</body></html>

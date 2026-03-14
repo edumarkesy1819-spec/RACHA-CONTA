@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout PIX Settlement Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e2363f",
+                        "background-light": "#FDFCF8",
+                        "background-dark": "#211112",
+                        "light-muted-blue": "#B7D8E8",
+                        "soft-muted-blue": "#8EBCCF",
+                        "soft-dusty-pink": "#EAC8CA",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body id="screen-checkout" class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 flex justify-center min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full max-w-md flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden shadow-lg border-x border-slate-200 dark:border-slate-800">
+<!-- Header -->
+<div class="flex items-center p-4 pb-2 justify-between sticky top-0 bg-background-light dark:bg-background-dark z-10 border-b border-slate-100 dark:border-slate-800">
+<button class="flex size-12 shrink-0 items-center justify-center text-slate-900 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Acerto de Contas</h2>
+</div>
+<!-- Main Content -->
+<div class="flex-1 overflow-y-auto pb-24">
+<!-- Total Summary Card -->
+<div class="flex flex-wrap gap-4 p-4">
+<div class="flex w-full flex-col gap-2 rounded-[32px] p-6 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-sm">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal uppercase tracking-wider">Total da Conta</p>
+<p id="checkout-summary-total" class="text-2xl font-bold leading-tight text-slate-900 dark:text-white">R$ 40,01</p>
+<p id="checkout-per-person" class="text-lg font-normal text-slate-500 dark:text-slate-400">R$ 40,01 por pessoa</p>
+</div>
+</div>
+<!-- Debt List -->
+<div id="checkout-debt-list" class="px-4 py-2 flex flex-col gap-3">
+<h3 class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1 px-2">Quem deve pagar</h3>
+<!-- JS populates cards here -->
+</div>
+
+<!-- Extra Settings & Finish Button -->
+<div class="px-4 mt-6 mb-8">
+  <label class="block text-sm font-semibold uppercase tracking-wider text-slate-500 mb-2 px-2">Sua Chave PIX</label>
+  <input type="text" id="settings-pix" class="w-full h-12 px-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:ring-2 focus:ring-primary/50 transition-all shadow-sm" placeholder="CPF, E-mail ou Celular">
+  
+  <button id="btn-finish" class="w-full h-14 mt-4 bg-primary hover:bg-primary/90 text-white text-base font-bold rounded-2xl shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2">
+    <span class="material-symbols-outlined">done_all</span>
+    Concluir e Salvar no Histórico
+  </button>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<div class="absolute bottom-0 w-full border-t border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark/95 backdrop-blur-sm pb-safe-area shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+<div class="flex gap-2 px-4 pb-4 pt-3 h-20">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors" href="history.html">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">history</span>
+</div>
+<p class="text-xs font-medium leading-normal tracking-wide">Histórico</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary dark:text-primary transition-colors relative" href="calculator.html">
+<div class="absolute -top-6 bg-primary text-white rounded-full p-3 shadow-lg flex items-center justify-center ring-4 ring-background-light dark:ring-background-dark">
+<span class="material-symbols-outlined text-[28px] font-bold">calculate</span>
+</div>
+<p class="text-xs font-bold leading-normal tracking-wide mt-6">Calcular</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors" href="settings.html">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">settings</span>
+</div>
+<p class="text-xs font-medium leading-normal tracking-wide">Ajustes</p>
+</a>
+</div>
+</div>
+</div>
+<script src="js/app.js"></script>
+</body></html>

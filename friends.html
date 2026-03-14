@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Adicionar Amigos</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8dbace",
+                        "background-light": "#f6f7f7",
+                        "background-dark": "#151b1d",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen pb-24">
+    <div class="relative flex h-auto min-h-screen w-full flex-col max-w-md mx-auto group/design-root overflow-x-hidden">
+        <!-- Header -->
+        <div
+            class="flex items-center p-4 pb-2 justify-between sticky top-0 bg-background-light dark:bg-background-dark z-10">
+            <button
+                class="text-slate-900 dark:text-slate-100 flex size-12 shrink-0 items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+                <span class="material-symbols-outlined text-2xl">arrow_back</span>
+            </button>
+            <h2 class="text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Adicionar Amigos
+            </h2>
+        </div>
+        <!-- Add Friend Input -->
+        <div class="px-4 py-4">
+            <div class="relative flex items-center bg-primary/20 rounded-2xl h-16 px-2 shadow-sm">
+                <input
+                    class="flex-1 bg-transparent border-none focus:ring-0 text-slate-900 dark:text-slate-100 placeholder:text-slate-500 text-base font-medium h-full px-4"
+                    placeholder="Nome do amigo" type="text" />
+                <button
+                    class="bg-primary hover:bg-primary/90 text-white size-12 rounded-full flex items-center justify-center shrink-0 transition-colors shadow-sm">
+                    <span class="material-symbols-outlined text-2xl">add</span>
+                </button>
+            </div>
+        </div>
+        <!-- Current Friends List -->
+        <div class="px-4 pt-4">
+            <h3 class="text-sm font-semibold tracking-wider text-slate-500 uppercase mb-4 px-2">Current Friends List
+            </h3>
+            <div class="flex flex-col gap-3">
+                <!-- Friend Card 1 -->
+                <div
+                    class="flex items-center justify-between bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="size-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-lg">
+                            M
+                        </div>
+                        <p class="font-bold text-base truncate">Maria Silva</p>
+                    </div>
+                    <button
+                        class="text-slate-400 hover:text-red-500 dark:text-slate-500 dark:hover:text-red-400 flex items-center justify-center size-8 rounded-full transition-colors">
+                        <span class="material-symbols-outlined text-xl">close</span>
+                    </button>
+                </div>
+                <!-- Friend Card 2 -->
+                <div
+                    class="flex items-center justify-between bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="size-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-lg">
+                            J
+                        </div>
+                        <p class="font-bold text-base truncate">João Santos</p>
+                    </div>
+                    <button
+                        class="text-slate-400 hover:text-red-500 dark:text-slate-500 dark:hover:text-red-400 flex items-center justify-center size-8 rounded-full transition-colors">
+                        <span class="material-symbols-outlined text-xl">close</span>
+                    </button>
+                </div>
+                <!-- Friend Card 3 -->
+                <div
+                    class="flex items-center justify-between bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="size-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-lg">
+                            A
+                        </div>
+                        <p class="font-bold text-base truncate">Ana Costa</p>
+                    </div>
+                    <button
+                        class="text-slate-400 hover:text-red-500 dark:text-slate-500 dark:hover:text-red-400 flex items-center justify-center size-8 rounded-full transition-colors">
+                        <span class="material-symbols-outlined text-xl">close</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Fixed Bottom Action Button -->
+        <div
+            class="fixed bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background-light via-background-light to-transparent dark:from-background-dark dark:via-background-dark max-w-md mx-auto z-20">
+            <button
+                class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-full shadow-lg transition-transform active:scale-[0.98] flex items-center justify-center gap-2">
+                Salvar e Continuar
+                <span class="material-symbols-outlined text-xl">arrow_forward</span>
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>
