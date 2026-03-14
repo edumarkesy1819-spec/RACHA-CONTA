@@ -1,3 +1,16 @@
+// Registro do Service Worker para PWA (Offline)
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then((registration) => {
+        console.log('ServiceWorker registrado com sucesso: ', registration.scope);
+      })
+      .catch((error) => {
+        console.log('Falha ao registrar o ServiceWorker: ', error);
+      });
+  });
+}
+
 // Estado global (Configurações e utilitários)
 const state = {
     history: JSON.parse(localStorage.getItem('racha_history')) || [],
