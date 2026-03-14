@@ -2,14 +2,14 @@
   "name": "Racha Conta",
   "short_name": "Racha Conta",
   "description": "App leve para dividir contas e calcular gorjetas entre amigos.",
-  "start_url": "/calculator.html",
+  "start_url": "./calculator.html",
   "display": "standalone",
   "background_color": "#15171d",
   "theme_color": "#8EBCCF",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "icon-512.png",
+      "src": "./icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"

@@ -1,14 +1,14 @@
-const CACHE_NAME = 'racha-conta-v1';
+const CACHE_NAME = 'racha-conta-v2';
 const ASSETS_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/history.html',
-  '/calculator.html',
-  '/checkout.html',
-  '/settings.html',
-  '/js/app.js',
-  '/manifest.json',
-  '/icon-512.png'
+  './',
+  './index.html',
+  './history.html',
+  './calculator.html',
+  './checkout.html',
+  './settings.html',
+  './js/app.js',
+  './manifest.json',
+  './icon-512.png'
 ];
 
 // Instala o Service Worker e adiciona os arquivos ao cache
